@@ -24,3 +24,6 @@
     ```bash
     npm start
     ```
+
+<img width="1163" alt="스크린샷 2021-03-25 오후 5 22 28" src="https://user-images.githubusercontent.com/39161206/112442067-c7175680-8d8e-11eb-85f8-e251e0d6e1a9.png">
+<img width="1163" alt="스크린샷 2021-03-25 오후 5 22 43" src="https://user-images.githubusercontent.com/39161206/112442075-ca124700-8d8e-11eb-9c73-d246b0ef440b.png">
