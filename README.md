@@ -1,5 +1,7 @@
 # 사용 방법
 
+- 1분 주기로 되어있으니 app.js 에서 `cron.schedule` 부분 시간 설정
+
 1. git 아이디 설정
 
     ```bash
