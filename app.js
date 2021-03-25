@@ -24,7 +24,7 @@ app.use('/', indexRouter);
 const task = cron.schedule("*/1 * * * *", () => {       // 1분마다 실행
   gitPlant.startSchedule()
 }, {
-  scheduled: false
+  timezone: 'Asia/Seoul'
 });
 
 task.start();

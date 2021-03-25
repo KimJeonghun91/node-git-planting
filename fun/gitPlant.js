@@ -40,9 +40,14 @@ const startSchedule = () => {
         // });
         let timestamp = new Date().getTime();
 
-        execSync('git add .');
-        execSync(`git commit -m "${timestamp}"`);
-        execSync('git push origin master');
+        try{
+            execSync('git add .');
+            execSync(`git commit -m "${timestamp}"`);
+            execSync('git push origin master');
+
+        }catch(err){
+            console.log('execSync error: ' + err); 
+        }
     });
 }
 module.exports = { start,startSchedule };
