@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var cron = require('node-cron');
 var indexRouter = require('./routes/index');
 var gitPlant = require('./fun/gitPlant');
 var app = express();
@@ -14,9 +15,21 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
-app.use(gitPlant.start)
 app.use('/', indexRouter);
+
+
+// app.use(gitPlant.start) // localhost:3999 에서 즉시 실행
+
+// const task = cron.schedule("0 9 1-31 * *", () => {   // 1~31일(매일) 9시 0분에 실행
+const task = cron.schedule("*/1 * * * *", () => {       // 1분마다 실행
+  gitPlant.startSchedule()
+}, {
+  scheduled: false
+});
+
+task.start();
+
+
 
 
 // catch 404 and forward to error handler
@@ -29,5 +42,5 @@ app.use(function (err, req, res, next) {
   res.render('error');
 });
 
-app.listen(app.get('port'), () => {  console.log(`******** ${app.get('port')} 번 포트에서 실행 ********`)});
+app.listen(app.get('port'), () => { console.log(`******** ${app.get('port')} 번 포트에서 실행 ********`) });
 module.exports = app;
