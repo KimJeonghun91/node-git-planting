@@ -20,8 +20,8 @@ app.use('/', indexRouter);
 
 // app.use(gitPlant.start) // localhost:3999 에서 즉시 실행
 
-// const task = cron.schedule("0 9 1-31 * *", () => {   // 1~31일(매일) 9시 0분에 실행
-const task = cron.schedule("*/1 * * * *", () => {       // 1분마다 실행
+const task = cron.schedule("0 9 1-31 * *", () => {   // 1~31일(매일) 9시 0분에 실행
+// const task = cron.schedule("*/1 * * * *", () => {       // 1분마다 실행
   gitPlant.startSchedule()
 }, {
   timezone: 'Asia/Seoul'
