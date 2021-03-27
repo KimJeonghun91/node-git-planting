@@ -1,13 +1,14 @@
 # 사용 방법
 
 - app.js 에서 `cron.schedule` 부분 시간 설정
-- localhost:3999 접속시 커밋 테스트 가능
+- localhost:3999/test 접속시 커밋 테스트 가능
 
 1. git 아이디 설정
 
     ```bash
     git config --global user.email "<깃 ID>"
     git config --global user.name "<깃 NAME>"
+    git config credential.helper store
     ```
 
 2. git 프로젝트 다운
