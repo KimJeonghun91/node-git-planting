@@ -7,7 +7,7 @@ const start = (req, res, next) => {
     console.log("################### planting ... ###################")
     console.log("####################################################")
 
-    fs.appendFile('./views/index.jade', `\n  span 🌱`, function (err) {
+    fs.appendFile('./views/index.jade', `🌱`, function (err) {
         if (err) { return console.log('appendFile error: ' + err); }
         
         let timestamp = new Date().getTime();
@@ -26,7 +26,7 @@ const startSchedule = () => {
     console.log("################### planting ... ###################")
     console.log("####################################################")
 
-    fs.appendFile('./views/index.jade', `\n  span 🌱`, function (err) {
+    fs.appendFile('./views/index.jade', `🌱`, function (err) {
         if (err) { return console.log('appendFile error: ' + err); }
 
         let timestamp = new Date().getTime();
