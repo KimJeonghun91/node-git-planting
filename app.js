@@ -15,8 +15,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use('/', indexRouter);
 
+app.use('/test', indexRouter);
 app.use('/test', gitPlant.start);// localhost:3999/test 에서 즉시 실행
 
 // const task = cron.schedule("*/1 * * * *", () => {       // 1분마다 실행
